@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -29,8 +29,29 @@
         linesec.lineTo(xSec, ySec); //вторая точка отрезка - точка до которой рисуем отрезок
         context_canva.lineWidth = 3; // задаём толщину секундной стрелки
         context_canva.strokeStyle = "red"; // задаём цвет секундной стрелки
-        context_canva.stroke(linesec); //прорисовываем линию на канве
+        context_canva.stroke(linesec);
+         //прорисовываем линию на канве
 
+        
+         context_canva.strokeStyle = "black";
+        let rMin = r-20;
+        let linemin = new Path2D();
+        linemin.moveTo(x,y);
+        let xMin = x + Math.cos(Math.PI*5/3)*rMin;
+        let yMin = y - Math.sin(Math.PI*5/3)*rMin;
+        linemin.lineTo(xMin, yMin);
+        context_canva.lineWidth = 3;
+        context_canva.stroke(linemin);
+
+        context_canva.strokeStyle = "black";
+        let rHg = r-30;
+        let linehg = new Path2D();
+        linehg.moveTo(x,y);
+         let xHg = x + Math.cos(Math.PI*7/6)*rHg;
+         let yHg = y - Math.sin(Math.PI*7/6)*rHg;
+         linehg.lineTo(xHg,yHg);
+         context_canva.lineWidth = 3;
+         context_canva.stroke(linehg);
         //добавьте здесь код для часовой и минутной стрелки
         //стрелки должны быть чёрного цвета
         //минутная стрелка должна быть короче секундной на 10 пикселей
